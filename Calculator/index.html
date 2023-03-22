@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen">
+            <input type="text" id="result" disabled>
+        </div>
+        <div class="buttons">
+            <button onclick="clearScreen()">C</button>
+            <button onclick="addToScreen('(')">(</button>
+            <button onclick="addToScreen(')')">)</button>
+            <button onclick="addToScreen('/')">/</button>
+            <br>
+            <button onclick="addToScreen('1')">1</button>
+            <button onclick="addToScreen('2')">2</button>
+            <button onclick="addToScreen('3')">3</button>
+            <button onclick="addToScreen('+')">+</button>
+            <br>
+            <button onclick="addToScreen('4')">4</button>
+            <button onclick="addToScreen('5')">5</button>
+            <button onclick="addToScreen('6')">6</button>
+            <button onclick="addToScreen('-')">-</button>
+            <br>
+            <button onclick="addToScreen('7')">7</button>
+            <button onclick="addToScreen('8')">8</button>
+            <button onclick="addToScreen('9')">9</button>
+            <button onclick="addToScreen('*')">*</button>
+            <br>
+            <button onclick="addToScreen('0')">0</button>
+            <button onclick="addToScreen('.')">.</button>
+            <button onclick="calculate()">=</button>
+        </div>
+    </div>
+   
+    <style>
+        .calculator {
+            width: 220px;
+            background-color: #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 2px 2px 5px #999;
+        }
+
+        .screen {
+            margin-bottom: 5px;
+            background-color: #fff;
+            border: 1px solid #999;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .buttons button {
+            width: 35px;
+            height: 30px;
+            margin: 2px;
+            border-radius: 5px;
+            border: none;
+            background-color: #666;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            .buttons button:hover {
+                background-color: #999;
+            }
+    </style>
+
+    <script>
+        let screen = document.getElementById("result");
+
+        function addToScreen(value) {
+            screen.value += value;
+        }
+
+        function clearScreen() {
+            screen.value = "";
+        }
+
+        function calculate() {
+            let result = eval(screen.value);
+            screen.value = result;
+        }
+    </script>
+
+
+</body>
+</html>
